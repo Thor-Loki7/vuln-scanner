@@ -1,0 +1,50 @@
+{
+  "target": "scanme.nmap.org",
+  "ip": "45.33.32.156",
+  "scanned_at": "2026-10-06T22:11:00",
+  "open_ports": [
+    {
+      "port": 22,
+      "service": "SSH",
+      "banner": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13",
+      "warning": null
+    },
+    {
+      "port": 80,
+      "service": "HTTP",
+      "banner": "Server: Apache/2.4.7 (Ubuntu)",
+      "warning": null
+    }
+  ],
+  "web_checks": [
+    {
+      "url": "http://scanme.nmap.org:80/",
+      "status": 200,
+      "missing_headers": [
+        {
+          "header": "Content-Security-Policy",
+          "why": "Helps prevent XSS"
+        },
+        {
+          "header": "X-Frame-Options",
+          "why": "Helps prevent clickjacking"
+        },
+        {
+          "header": "X-Content-Type-Options",
+          "why": "Prevents MIME sniffing"
+        },
+        {
+          "header": "Referrer-Policy",
+          "why": "Controls referrer information leakage"
+        },
+        {
+          "header": "Permissions-Policy",
+          "why": "Restricts browser features"
+        }
+      ],
+      "info_leaks": [
+        "Server: Apache/2.4.7 (Ubuntu)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+venv/
+scan_*.json
+__pycache__/
